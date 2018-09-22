@@ -15,7 +15,7 @@ Scenario('Testing Login', (I) => {
   I.fillField('Status ', 'abc')
   I.click('Create Blog')
   I.click('Add Picture')
-  I.attachFile('#attachment_image', 'upload.jpg')
+  I.attachFile('#attachment_image', 'puppy.jpg')
   I.click('Create Attachment')
   I.click('Back')
   I.see('abc')
