@@ -1,0 +1,27 @@
+{
+  "output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "https://nandsta-gram.herokuapp.com/users/sign_in",
+      "browser": "chrome",
+      "smartWait": 5000,
+      "restart": false,
+      "windowSize": "maximize",
+      "timeouts": {
+        "script": 60000,
+        "page load": 10000
+      }
+    }
+  },
+  "include": {
+    "I": "./steps_file.js"
+  },
+  "mocha": {},
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "gherkin": {},
+  "tests": "./*_test.js",
+  "timeout": 10000,
+  "name": "nandsta"
+}
