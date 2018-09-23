@@ -3,24 +3,30 @@
 Feature('Add Blog')
 
 Scenario('Testing Login', (I) => {
+  //login
   I.amOnPage('/')
   I.see('Log in')
-  I.fillField('Email', 'abhi358@gmail.com')
-  I.fillField('Password', 'ABHI@dp11')
+  I.fillField('Email', '')
+  I.fillField('Password', '')
   I.click('Log in')
-  I.see('Add Blog')
 
+  //add blog
+  I.see('Add Blog')
   I.click('Add Blog')
-  // I.see('New Blog')
-  I.fillField('Status ', 'abc')
+  I.fillField('Status ', 'Cute Puppies')
   I.click('Create Blog')
+
+  //attach picture
   I.click('Add Picture')
+  I.see('Image')
+  I.wait(2)
+  I.waitForVisible('#attachment_image')
   I.attachFile('#attachment_image', 'puppy.jpg')
   I.click('Create Attachment')
-  I.click('Back')
-  I.see('abc')
+  I.waitForVisible('#notice')
+  I.see('Attachment was successfully created.')
+
+  //back to homepage
   I.click('Instagram')
-  I.see('abc')
+  I.see('Cute Puppies')
 })
-
-
